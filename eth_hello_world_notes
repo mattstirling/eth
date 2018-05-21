@@ -1,0 +1,13 @@
+geth --datadir=./eth/chaindata/ init genesis.json
+geth --datadir=./eth/chaindata/
+
+geth attach ipc://./pipe/geth.ipc
+
+personal.newAccount()
+Passphrase:
+Repeat Passphrase:
+"0x... this is your account address"
+
+miner.setEtherbase(address)
+
+miner.start(1);
