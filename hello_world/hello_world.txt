@@ -1,1 +1,30 @@
-test
+geth --datadir=./eth/chaindata/ init genesis.json
+geth --datadir=./eth/chaindata/
+
+geth attach ipc://./pipe/geth.ipc
+
+personal.newAccount()
+Passphrase:
+Repeat Passphrase:
+"0x... this is your account address"
+
+miner.setEtherbase(address)
+
+miner.start(1);
+
+pragma solidity ^0.4.18;
+contract HelloWorld {
+    uint256 counter = 0;
+    
+    function increase() public {
+        counter++;
+    }    
+    
+    function decrease() public {
+        counter--;
+    }
+    
+    function getCounter() public constant returns (uint256){
+        return counter;
+    }
+}
