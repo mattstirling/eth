@@ -1,0 +1,21 @@
+use Google Cloud Platform:
+https://gist.github.com/cryptogoth/ee67803f66af7db095062d50b22e3a6f
+*should also add here: sudo apt install ethereum ethminer
+
+or use AWS instructions here:
+    Go to your EC2 console in AWS and change the zone to US-West (N Cali). This zone happens to be the cheapest for the type of instance we’ll be using, and also contains a community AMI that has all the required mining libraries already installed for instant use.
+    Under Instances, select Spot Instances and click ‘Request Spot Instances’.
+    Search for a community AMI called ami-e326daa7 and select it.  
+    Under Instance type choose g2.8xlarge.
+    Review and Launch!
+
+How to start mining:
+1. get a wallet from myetherwallet.com
+2. use Dwarfpool
+
+Simply SSH to your instance and type:
+> tmux
+> sudo 
+> ethminer -G -F http://eth-eu.dwarfpool.com/{WALLET ADDRESS}/{YOUR_EMAIL ADDRESS} --cl-local-work 256 --cl-global-work 16384
+*okay, no GPU means we update this command
+> ethminer -F http://eth-eu.dwarfpool.com/{WALLET ADDRESS}/{YOUR_EMAIL ADDRESS}
